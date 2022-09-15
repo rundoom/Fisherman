@@ -5,6 +5,7 @@ extends RigidBody2D
 export (NodePath) var joining
 
 
+#test
 # Join to exposed node
 func _ready():
 	var node_to_join = get_node_or_null(joining)
