@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://character/pole/PoleSegment.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Pole" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Holder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holder"]
+position = Vector2( 0, -32 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="PoleSegment2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -7 )
+joining = NodePath("../Holder")
+
+[node name="PoleSegment3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 57 )
+joining = NodePath("../PoleSegment2")
+
+[node name="PoleSegment4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 121 )
+joining = NodePath("../PoleSegment3")
+
+[node name="PoleSegment5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 185 )
+joining = NodePath("../PoleSegment4")
+
+[node name="PoleSegment6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 249 )
+joining = NodePath("../PoleSegment5")
+
+[node name="PoleSegment7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 313 )
+joining = NodePath("../PoleSegment6")
+
+[node name="PoleSegment8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 377 )
+joining = NodePath("../PoleSegment7")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 0, 435 )
+gravity_scale = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D"]
+position = Vector2( 0, -10 )
+node_a = NodePath("../../PoleSegment8")
+node_b = NodePath("..")
+disable_collision = false
