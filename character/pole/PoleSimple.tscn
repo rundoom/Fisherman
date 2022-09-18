@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png" type="Texture" id=1]
+[ext_resource path="res://character/pole/PoleHook.gd" type="Script" id=2]
+[ext_resource path="res://character/pole/DynamicLine.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.025
+
+[node name="PoleSimple" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 376 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 3 )
+
+[node name="HookPosition" type="Position2D" parent="."]
+position = Vector2( 0, 376 )
+
+[node name="HookAnchor" type="StaticBody2D" parent="HookPosition"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/HookAnchor"]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="HookAttractor" type="DampedSpringJoint2D" parent="HookPosition"]
+node_a = NodePath("../PoleHook")
+node_b = NodePath("../HookAnchor")
+length = 15.0
+stiffness = 50.0
+
+[node name="PoleHook" type="RigidBody2D" parent="HookPosition"]
+unique_name_in_owner = true
+mass = 7.78
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/PoleHook"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="HookPosition/PoleHook"]
+position = Vector2( -1.19209e-07, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+offset = Vector2( 190, 330 )
+flip_h = true

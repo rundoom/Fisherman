@@ -6,12 +6,12 @@
 [node name="Level" type="Node2D"]
 
 [node name="River" parent="." instance=ExtResource( 1 )]
-position = Vector2( 511, 234 )
-
-[node name="Camera2D" type="Camera2D" parent="River"]
-position = Vector2( 0, -171.515 )
-scale = Vector2( 1.12082, 0.133862 )
-current = true
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
-position = Vector2( 158, 404 )
+position = Vector2( -351, 166 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1256, 166 )
