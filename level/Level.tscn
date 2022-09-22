@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fish/Fish.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node2D"]
 
@@ -17,3 +18,15 @@ __meta__ = {
 position = Vector2( 0, 385 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
+
+[node name="Fish" parent="." instance=ExtResource( 3 )]
+position = Vector2( 275, 492 )
+
+[node name="Fish2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 440, 657 )
+
+[node name="Fish3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 71, 552 )
+
+[node name="Fish4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -369, 720 )
