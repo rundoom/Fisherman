@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png-273f99e567c0dbb208075640855f4837.stex"
+path="res://.import/loosesprites_aquariumfish.png-68b75f262767737dc3b7f5919c418aaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png"
-dest_files=[ "res://.import/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png-273f99e567c0dbb208075640855f4837.stex" ]
+source_file="res://loosesprites_aquariumfish.png"
+dest_files=[ "res://.import/loosesprites_aquariumfish.png-68b75f262767737dc3b7f5919c418aaa.stex" ]
 
 [params]
 

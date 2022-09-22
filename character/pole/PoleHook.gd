@@ -9,6 +9,4 @@ func _ready():
 
 
 func _integrate_forces(state):
-	
-
-func un
+	look_at(owner.global_position)

@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png" type="Texture" id=1]
+[ext_resource path="res://character/pole/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png" type="Texture" id=1]
 [ext_resource path="res://character/pole/PoleHook.gd" type="Script" id=2]
 [ext_resource path="res://character/pole/DynamicLine.gd" type="Script" id=3]
+[ext_resource path="res://character/pole/fishing_pole.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 20.025
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 20.7892
+height = 55.4346
 
 [node name="PoleSimple" type="Node2D"]
 
@@ -40,11 +42,20 @@ gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/PoleHook"]
-shape = SubResource( 1 )
+position = Vector2( -36, 6 )
+rotation = -1.4333
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="HookPosition/PoleHook"]
-position = Vector2( -1.19209e-07, 0 )
+position = Vector2( -3.8147e-06, 0 )
+rotation = 1.94003
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
-offset = Vector2( 190, 330 )
+offset = Vector2( 200, 330 )
 flip_h = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -111, 45 )
+rotation = 0.234005
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )

@@ -56,4 +56,4 @@ scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 2 )
 
 [node name="PoleSimple" parent="." instance=ExtResource( 3 )]
-position = Vector2( 184, -86 )
+position = Vector2( 238, -127 )
