@@ -21,4 +21,31 @@ position = Vector2( 718, 694 )
 position = Vector2( 847, 124 )
 
 [node name="Fish5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 473, 90 )
+position = Vector2( 534, 90 )
+
+[node name="Fish6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 167, 425 )
+
+[node name="Fish7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 356, 343 )
+
+[node name="Fish8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 534, 237 )
+
+[node name="Fish9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 759, 337 )
+
+[node name="Fish10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 841, 439 )
+
+[node name="Fish11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 562, 586 )
+
+[node name="Fish12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 361, 531 )
+
+[node name="Fish13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 894, 601 )
+
+[node name="Fish14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 413, 683 )

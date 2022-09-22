@@ -9,6 +9,8 @@ func _ready():
 
 
 func get_hooked(hook_with: RemoteTransform2D):
+	$Particles2D.emitting = true
+	
 	for child in get_children():
 		if child is CollisionShape2D or child is CollisionShape2D:
 			child.set_deferred("disabled", true)

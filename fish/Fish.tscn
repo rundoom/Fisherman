@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://loosesprites_aquariumfish.png" type="Texture" id=1]
 [ext_resource path="res://fish/Fish.gd" type="Script" id=2]
@@ -119,6 +119,33 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=20]
 radius = 47.0956
 
+[sub_resource type="Curve" id=22]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.985294, 0 ), -0.0634032, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=23]
+curve = SubResource( 22 )
+
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
+
+[sub_resource type="ParticlesMaterial" id=21]
+trail_size_modifier = SubResource( 25 )
+emission_shape = 1
+emission_sphere_radius = 29.08
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 200, 0 )
+initial_velocity = 197.9
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 21.99
+scale_random = 0.86
+scale_curve = SubResource( 23 )
+color = Color( 0.47451, 0.721569, 0.756863, 1 )
+
 [node name="Fish" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 0
@@ -133,3 +160,13 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 20 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
+amount = 64
+one_shot = true
+speed_scale = 1.48
+explosiveness = 0.71
+randomness = 0.68
+local_coords = false
+process_material = SubResource( 21 )
