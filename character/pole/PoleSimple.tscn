@@ -8,8 +8,8 @@
 [sub_resource type="CircleShape2D" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 20.7892
-height = 55.4346
+radius = 26.091
+height = 47.296
 
 [node name="PoleSimple" type="Node2D"]
 
@@ -37,8 +37,12 @@ stiffness = 50.0
 
 [node name="PoleHook" type="RigidBody2D" parent="HookPosition"]
 unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
 mass = 7.78
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/PoleHook"]
@@ -46,16 +50,40 @@ position = Vector2( -36, 6 )
 rotation = -1.4333
 shape = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="HookPosition/PoleHook"]
-position = Vector2( -3.8147e-06, 0 )
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="HookPosition/PoleHook"]
+position = Vector2( -63, 5 )
+update_scale = false
+
+[node name="Node2D" type="Node2D" parent="HookPosition/PoleHook"]
+position = Vector2( -0.0126495, -0.161011 )
+
+[node name="Sprite" type="Sprite" parent="HookPosition/PoleHook/Node2D"]
+position = Vector2( 0.317871, -0.814819 )
 rotation = 1.94003
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
-offset = Vector2( 200, 330 )
+centered = false
+offset = Vector2( -320.339, -73.036 )
 flip_h = true
+region_enabled = true
+region_rect = Rect2( 200, 0, 600, 850 )
+
+[node name="Sprite2" type="Sprite" parent="HookPosition/PoleHook/Node2D"]
+position = Vector2( -77.3347, 41.7001 )
+rotation = 1.94003
+scale = Vector2( 0.1, 0.1 )
+z_index = -1
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -398.341, -194.773 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( -50, 450, 250, 400 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -111, 45 )
 rotation = 0.234005
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
+
+[connection signal="body_entered" from="HookPosition/PoleHook" to="HookPosition/PoleHook" method="_on_PoleHook_body_entered"]

@@ -8,5 +8,10 @@ func _ready():
 	global_transform = temp_transform
 
 
-func _integrate_forces(state):
+func _physics_process(delta):
 	look_at(owner.global_position)
+
+
+func _on_PoleHook_body_entered(body):
+	if body.has_method("get_hooked"):
+		body.get_hooked($RemoteTransform2D)
