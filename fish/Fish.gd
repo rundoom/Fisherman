@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 onready var animation_names = $AnimatedSprite.frames.get_animation_names()
+export var velocity = Vector2(-1000, 0)
 
 
 func _ready():
@@ -16,3 +17,11 @@ func get_hooked(hook_with: RemoteTransform2D):
 			child.set_deferred("disabled", true)
 			
 	hook_with.remote_path = get_path()
+	velocity = Vector2(0, 0)
+
+
+func _physics_process(delta):
+	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+	if collision and collision.collider is StaticBody2D:
+		queue_free()
+		
