@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fish/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://catchebles/Spawner.gd" type="Script" id=1]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, 630, 55, 0, 0, 0, 0, 636, -352 )
 }
 
 [node name="SpawnLine" type="Path2D"]
@@ -16,5 +16,7 @@ process_mode = 0
 autostart = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 630, 55 )
+rotation = -1.55607
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
