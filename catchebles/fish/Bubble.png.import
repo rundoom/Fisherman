@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/egg.png-6d6c0df5f9db34b50c91b68c0aab99dd.stex"
+path="res://.import/Bubble.png-a807fae5b8aa9e7f607f965c25010b7d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://egg.png"
-dest_files=[ "res://.import/egg.png-6d6c0df5f9db34b50c91b68c0aab99dd.stex" ]
+source_file="res://catchebles/fish/Bubble.png"
+dest_files=[ "res://.import/Bubble.png-a807fae5b8aa9e7f607f965c25010b7d.stex" ]
 
 [params]
 
