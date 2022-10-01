@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "RemainsParticles",
 "language": "GDScript",
 "path": "res://catchebles/RemainsParticles.gd"
+}, {
+"base": "Camera2D",
+"class": "ShakingCamera",
+"language": "GDScript",
+"path": "res://level/ShakingCamera.gd"
 } ]
 _global_script_class_icons={
 "Fish": "",
 "GitAPI": "",
-"RemainsParticles": ""
+"RemainsParticles": "",
+"ShakingCamera": ""
 }
 
 [application]

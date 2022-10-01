@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+signal hooked
+
 export var speed = 400
 var screen_size
 var velocity = Vector2.ZERO
@@ -28,3 +30,7 @@ func _handle_input():
 		velocity.y -= 1
 		
 	velocity = velocity.normalized()
+
+
+func _on_PoleSimple_hooked() -> void:
+	emit_signal("hooked")

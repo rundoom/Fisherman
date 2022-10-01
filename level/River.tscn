@@ -49,14 +49,14 @@ polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -
 [node name="Surface" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 641.472, 0, 1382.12, 771.673 )
+region_rect = Rect2( 1167.49, 0, 1382.12, 771.673 )
 
 [node name="Underwater" type="Sprite" parent="."]
 position = Vector2( 0, 691.462 )
 scale = Vector2( 1.34803, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 474.85, 0, 1023.16, 768.8 )
+region_rect = Rect2( 864.237, 0, 1023.16, 768.8 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1104, 0 )

@@ -57,3 +57,5 @@ texture = ExtResource( 2 )
 
 [node name="PoleSimple" parent="." instance=ExtResource( 3 )]
 position = Vector2( 238, -127 )
+
+[connection signal="hooked" from="PoleSimple" to="." method="_on_PoleSimple_hooked"]

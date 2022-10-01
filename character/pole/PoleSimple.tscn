@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://character/pole/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png" type="Texture" id=1]
 [ext_resource path="res://character/pole/PoleHook.gd" type="Script" id=2]
 [ext_resource path="res://character/pole/DynamicLine.gd" type="Script" id=3]
 [ext_resource path="res://character/pole/fishing_pole.png" type="Texture" id=4]
+[ext_resource path="res://character/pole/PoleSimple.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -12,6 +13,7 @@ radius = 26.091
 height = 47.296
 
 [node name="PoleSimple" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 376 )

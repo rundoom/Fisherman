@@ -11,12 +11,11 @@ func get_hooked(hook_with: RemoteTransform2D):
 	$Particles2D.emitting = true
 	
 	$CollisionShape2D.set_deferred("disabled", true)
-			
+	velocity = Vector2(0, 0)
+
 	hook_with.remote_path = get_path()
 	
 	if(hooked_body.has_method("pass_away")): hooked_body.pass_away()
-	
-	velocity = Vector2(0, 0)
 	
 	release_egg()
 	
