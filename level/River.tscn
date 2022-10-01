@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://level/sea-landscape-with-calm-water-surface-clouds-blue-sky_107791-4145.jpg" type="Texture" id=1]
 [ext_resource path="res://level/underwater tileable.png" type="Texture" id=2]
@@ -36,6 +36,33 @@ tracks/1/keys = {
 "values": [ Rect2( 0, 0, 1023.16, 768.8 ), Rect2( 1023.1, 0, 1023.16, 768.8 ) ]
 }
 
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+
+uniform sampler2D noize;
+uniform float speed : hint_range(0.01, 0.5, 0.01) = 0.1;
+uniform float strength : hint_range(0.01, 0.5, 0.01) = 0.1;
+
+
+void fragment(){
+	float noize_val = texture(noize, UV + TIME * speed).r;
+	
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV - (strength / 2.0) + vec2(noize_val) * strength);
+}"
+
+[sub_resource type="OpenSimplexNoise" id=6]
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 4 )
+shader_param/speed = 0.01
+shader_param/strength = 0.03
+shader_param/noize = SubResource( 5 )
+
 [node name="River" type="StaticBody2D"]
 z_index = -2
 collision_mask = 3
@@ -49,19 +76,29 @@ polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -
 [node name="Surface" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1167.49, 0, 1382.12, 771.673 )
+region_rect = Rect2( 119.238, 0, 1382.12, 771.673 )
 
 [node name="Underwater" type="Sprite" parent="."]
 position = Vector2( 0, 691.462 )
 scale = Vector2( 1.34803, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 864.237, 0, 1023.16, 768.8 )
+region_rect = Rect2( 88.2663, 0, 1023.16, 768.8 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1104, 0 )
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="SpriteScroller" type="AnimationPlayer" parent="."]
 autoplay = "surface_move"
 anims/surface_move = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 3 )
+margin_left = -690.0
+margin_top = 307.0
+margin_right = 691.0
+margin_bottom = 1075.0
