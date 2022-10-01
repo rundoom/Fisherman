@@ -13,10 +13,6 @@ position = Vector2( 1, 0 )
 position = Vector2( 445, 367 )
 velocity = Vector2( 0, 0 )
 
-[node name="Seagul" parent="." instance=ExtResource( 4 )]
-position = Vector2( 676, 194 )
-velocity = Vector2( 0, 0 )
-
 [node name="Seagul2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 814, 527 )
 velocity = Vector2( 0, 0 )

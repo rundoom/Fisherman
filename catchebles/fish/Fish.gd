@@ -24,3 +24,6 @@ func _physics_process(delta):
 	if collision and collision.collider is StaticBody2D:
 		queue_free()
 		
+
+func pass_away():
+	queue_free()

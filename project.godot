@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Particles2D",
+"class": "RemainsParticles",
+"language": "GDScript",
+"path": "res://catchebles/RemainsParticles.gd"
 } ]
 _global_script_class_icons={
 "Fish": "",
-"GitAPI": ""
+"GitAPI": "",
+"RemainsParticles": ""
 }
 
 [application]

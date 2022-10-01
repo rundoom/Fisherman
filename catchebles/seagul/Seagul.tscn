@@ -1,72 +1,60 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://catchebles/seagul/Seagul.gd" type="Script" id=1]
 [ext_resource path="res://catchebles/fish/loosesprites_aquariumfish.png" type="Texture" id=2]
 [ext_resource path="res://catchebles/seagul/feather.png" type="Texture" id=3]
 [ext_resource path="res://catchebles/seagul/Seagul.png" type="Texture" id=4]
+[ext_resource path="res://egg.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 360, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 384, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 408, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 432, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=19]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 456, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 120, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 144, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 168, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 24, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 48, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 72, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 96, 144, 24, 24 )
 
@@ -116,27 +104,22 @@ atlas = ExtResource( 4 )
 region = Rect2( 1064, 0, 133, 133 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 240, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 264, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 288, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 312, 144, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 336, 144, 24, 24 )
 
@@ -222,6 +205,10 @@ scale = 0.1
 scale_random = 0.09
 scale_curve = SubResource( 23 )
 
+[sub_resource type="CapsuleShape2D" id=40]
+radius = 20.0
+height = 0.0
+
 [node name="Seagul" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 0
@@ -230,7 +217,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "seagul"
-frame = 6
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -249,3 +236,18 @@ randomness = 0.68
 local_coords = false
 process_material = SubResource( 21 )
 texture = ExtResource( 3 )
+
+[node name="Egg" type="RigidBody2D" parent="."]
+visible = false
+modulate = Color( 2, 2, 2, 1 )
+collision_layer = 0
+collision_mask = 0
+mode = 1
+gravity_scale = 3.0
+
+[node name="Sprite" type="Sprite" parent="Egg"]
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
+shape = SubResource( 40 )

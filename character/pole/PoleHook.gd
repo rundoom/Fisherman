@@ -8,7 +8,7 @@ func _ready():
 	global_transform = temp_transform
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	look_at(owner.global_position)
 
 
