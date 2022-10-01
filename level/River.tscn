@@ -3,16 +3,12 @@
 [ext_resource path="res://level/sea-landscape-with-calm-water-surface-clouds-blue-sky_107791-4145.jpg" type="Texture" id=1]
 [ext_resource path="res://level/underwater tileable.png" type="Texture" id=2]
 
-[sub_resource type="LineShape2D" id=2]
-normal = Vector2( 1, 0 )
-d = 35.8469
-
 [sub_resource type="Animation" id=1]
 resource_name = "surface_move"
 length = 3.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Surface:region_rect")
+tracks/0/path = NodePath("Surface/Surface:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,7 +20,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 1382.12, 771.673 ), Rect2( 1382.1, 0, 1382.12, 771.673 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Underwater:region_rect")
+tracks/1/path = NodePath("Underwater/Underwater:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -63,31 +59,12 @@ shader_param/speed = 0.01
 shader_param/strength = 0.06
 shader_param/noize = SubResource( 5 )
 
-[node name="River" type="StaticBody2D"]
+[sub_resource type="LineShape2D" id=2]
+normal = Vector2( 1, 0 )
+d = 35.8469
+
+[node name="River" type="Node2D"]
 z_index = -2
-collision_mask = 3
-
-[node name="SurfaceCollision" type="CollisionPolygon2D" parent="."]
-position = Vector2( -521, -727.769 )
-scale = Vector2( 1, 1.5649 )
-build_mode = 1
-polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -169, 664.952 )
-
-[node name="Surface" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 504.784, 0, 1382.12, 771.673 )
-
-[node name="Underwater" type="Sprite" parent="."]
-position = Vector2( 0, 691.462 )
-scale = Vector2( 1.34803, 1 )
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 373.667, 0, 1023.16, 768.8 )
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1104, 0 )
-shape = SubResource( 2 )
 
 [node name="SpriteScroller" type="AnimationPlayer" parent="."]
 autoplay = "surface_move"
@@ -103,3 +80,32 @@ margin_left = -690.0
 margin_top = 307.0
 margin_right = 691.0
 margin_bottom = 1075.0
+
+[node name="Surface" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="SurfaceCollision" type="CollisionPolygon2D" parent="Surface"]
+position = Vector2( -521, -727.769 )
+scale = Vector2( 1, 1.5649 )
+build_mode = 1
+polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -169, 664.952 )
+
+[node name="Surface" type="Sprite" parent="Surface"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 276.832, 0, 1382.12, 771.673 )
+
+[node name="Underwater" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Underwater" type="Sprite" parent="Underwater"]
+position = Vector2( 0, 691.462 )
+scale = Vector2( 1.34803, 1 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 204.925, 0, 1023.16, 768.8 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Underwater"]
+position = Vector2( -1104, 0 )
+shape = SubResource( 2 )
