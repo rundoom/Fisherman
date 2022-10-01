@@ -21,6 +21,7 @@ glow_blend_mode = 0
 position = Vector2( 2, 1 )
 
 [node name="River" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 34 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 position = Vector2( -351, 167 )
@@ -33,6 +34,7 @@ position = Vector2( 0, 385 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 script = ExtResource( 6 )
+NOISE_SHAKE_STRENGTH = 30.0
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 98, 0 )
