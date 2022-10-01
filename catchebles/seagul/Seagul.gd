@@ -18,6 +18,10 @@ func get_hooked(hook_with: RemoteTransform2D):
 	
 	velocity = Vector2(0, 0)
 	
+	release_egg()
+	
+	
+func release_egg():
 	var temp_transform = $Egg.global_transform
 	$Egg.set_as_toplevel(true)
 	$Egg.global_transform = temp_transform
