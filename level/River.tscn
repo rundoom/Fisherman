@@ -60,7 +60,7 @@ noise = SubResource( 6 )
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 4 )
 shader_param/speed = 0.01
-shader_param/strength = 0.03
+shader_param/strength = 0.06
 shader_param/noize = SubResource( 5 )
 
 [node name="River" type="StaticBody2D"]
@@ -76,14 +76,14 @@ polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -
 [node name="Surface" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 119.238, 0, 1382.12, 771.673 )
+region_rect = Rect2( 504.784, 0, 1382.12, 771.673 )
 
 [node name="Underwater" type="Sprite" parent="."]
 position = Vector2( 0, 691.462 )
 scale = Vector2( 1.34803, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 88.2663, 0, 1023.16, 768.8 )
+region_rect = Rect2( 373.667, 0, 1023.16, 768.8 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1104, 0 )
@@ -93,10 +93,11 @@ shape = SubResource( 2 )
 autoplay = "surface_move"
 anims/surface_move = SubResource( 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+[node name="DistortionHolder" type="Node2D" parent="."]
+z_index = 2
+z_as_relative = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="DistortionProvider" type="ColorRect" parent="DistortionHolder"]
 material = SubResource( 3 )
 margin_left = -690.0
 margin_top = 307.0
