@@ -33,6 +33,7 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
+position = Vector2( 98, 0 )
 curve = SubResource( 1 )
 fish_types = [ ExtResource( 3 ) ]
 
