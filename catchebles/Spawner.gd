@@ -10,7 +10,7 @@ func _on_SpawnTimer_timeout():
 	var fish = fish_picked_type.instance()
 	$PathFollow2D.offset = randi()
 	fish.global_position = $PathFollow2D.global_position
-	get_tree().root.add_child(fish)
+	get_tree().current_scene.add_child(fish)
 
 
 func _get_configuration_warning() -> String:
