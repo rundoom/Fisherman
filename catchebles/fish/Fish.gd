@@ -11,6 +11,7 @@ func _ready():
 
 
 func get_hooked(hook_with: RemoteTransform2D):
+	if !hook_with.remote_path.is_empty(): return
 	$Particles2D.emitting = true
 	
 	$CollisionShape2D.set_deferred("disabled", true)
