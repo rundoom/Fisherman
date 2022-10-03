@@ -15,7 +15,7 @@ func get_hooked(hook_with: RemoteTransform2D):
 	$Particles2D.emitting = true
 	
 	$CollisionShape2D.set_deferred("disabled", true)
-			
+
 	hook_with.remote_path = get_path()
 	velocity = Vector2(0, 0)
 

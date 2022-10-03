@@ -148,7 +148,7 @@ script = ExtResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "octopus"
-frame = 1
+frame = 4
 playing = true
 flip_h = true
 

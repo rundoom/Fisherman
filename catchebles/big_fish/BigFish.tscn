@@ -40,7 +40,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 180.0 ]
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -77,10 +77,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( -0.1, 0 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 180.0, 180.0 ]
+"values": [ 0.0 ]
 }
 
 [sub_resource type="AtlasTexture" id=3]
@@ -107,8 +107,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 65.1366
-height = 329.679
+radius = 56.0
+height = 204.0
 
 [node name="BigFish" type="Node2D" groups=["egg_hunters"]]
 script = ExtResource( 2 )
@@ -118,19 +118,21 @@ root_node = NodePath("../..")
 anims/RESET = SubResource( 6 )
 anims/devour = SubResource( 7 )
 
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 20, -128 )
+
 [node name="BigFish" type="KinematicBody2D" parent="."]
-rotation = 3.14159
 collision_layer = 2
 collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BigFish"]
-rotation = -1.5708
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 2 )
 animation = "calm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BigFish"]
-rotation = 3.14159
 shape = SubResource( 5 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

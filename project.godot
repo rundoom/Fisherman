@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VietnamiseFisherman"
-run/main_scene="res://level/Level.tscn"
+run/main_scene="res://test/TestingPlace.tscn"
 
 [display]
 

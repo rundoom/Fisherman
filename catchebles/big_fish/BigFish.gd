@@ -14,9 +14,8 @@ func get_hooked(hook_with: RemoteTransform2D):
 	$AnimationPlayer.advance(0)
 	$AnimationPlayer.stop()
 	
-	$BigFish.rotation_degrees = 270
-	$BigFish.position.x = -180
-	$BigFish.position.y = -20
+	$BigFish.rotation_degrees = 90
+	$BigFish.position = $Position2D.position.rotated(-deg2rad($BigFish.rotation_degrees))
 	
 	$BigFish/CollisionShape2D.set_deferred("disabled", true)
 
