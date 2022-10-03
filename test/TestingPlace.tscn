@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
+[ext_resource path="res://catchebles/big_fish/BigFish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://catchebles/seagul/Seagul.tscn" type="PackedScene" id=4]
 
 [node name="TestingPlace" type="Node2D"]
 position = Vector2( 1, 0 )
+
+[node name="BigFish" parent="." instance=ExtResource( 3 )]
+position = Vector2( 800, 512 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 
@@ -13,6 +17,14 @@ position = Vector2( 1, 0 )
 position = Vector2( 445, 367 )
 velocity = Vector2( 0, 0 )
 
+[node name="Fish2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 445, 159 )
+velocity = Vector2( 0, 0 )
+
 [node name="Seagul2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 814, 527 )
+position = Vector2( 628, 159 )
+velocity = Vector2( 0, 0 )
+
+[node name="Seagul3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 927, 86 )
 velocity = Vector2( 0, 0 )

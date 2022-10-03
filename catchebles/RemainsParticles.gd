@@ -3,11 +3,12 @@ class_name RemainsParticles
 
 
 func emit_then_free():
-	var root = get_tree().root
+	emitting = false
+	var current_scene = get_tree().current_scene
 	var final_position = get_parent().global_position
 	
 	get_parent().remove_child(self)
-	root.add_child(self)
+	current_scene.add_child(self)
 	
 	global_position = final_position
 	
@@ -15,4 +16,3 @@ func emit_then_free():
 	yield(get_tree().create_timer(lifetime), "timeout")
 	
 	queue_free()
-	

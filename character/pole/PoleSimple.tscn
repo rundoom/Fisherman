@@ -39,8 +39,8 @@ stiffness = 50.0
 
 [node name="PoleHook" type="RigidBody2D" parent="HookPosition"]
 unique_name_in_owner = true
-collision_layer = 4
-collision_mask = 6
+collision_layer = 0
+collision_mask = 2
 mass = 7.78
 gravity_scale = 0.0
 contacts_reported = 1

@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://catchebles/RemainsParticles.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Seagul",
+"language": "GDScript",
+"path": "res://catchebles/seagul/Seagul.gd"
+}, {
 "base": "Camera2D",
 "class": "ShakingCamera",
 "language": "GDScript",
@@ -33,13 +38,14 @@ _global_script_class_icons={
 "Fish": "",
 "GitAPI": "",
 "RemainsParticles": "",
+"Seagul": "",
 "ShakingCamera": ""
 }
 
 [application]
 
 config/name="VietnamiseFisherman"
-run/main_scene="res://test/TestingPlace.tscn"
+run/main_scene="res://level/Level.tscn"
 
 [display]
 

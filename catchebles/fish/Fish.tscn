@@ -140,7 +140,7 @@ flags = 4
 load_path = "res://.import/Bubble.png-64b50ecd2edfd81bc3d16ed0d756eeaf.stex"
 
 [node name="Fish" type="KinematicBody2D"]
-collision_layer = 2
+collision_layer = 6
 collision_mask = 2
 script = ExtResource( 1 )
 
@@ -148,7 +148,7 @@ script = ExtResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "octopus"
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 
