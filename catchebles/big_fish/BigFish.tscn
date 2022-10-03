@@ -118,7 +118,7 @@ root_node = NodePath("../..")
 anims/RESET = SubResource( 6 )
 anims/devour = SubResource( 7 )
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="HookPlace" type="Position2D" parent="."]
 position = Vector2( 20, -128 )
 
 [node name="BigFish" type="KinematicBody2D" parent="."]
