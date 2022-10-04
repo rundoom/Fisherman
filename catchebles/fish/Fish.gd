@@ -21,8 +21,8 @@ func get_hooked(hook_with: RemoteTransform2D):
 
 
 func _physics_process(delta):
-	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-		
+	move_and_collide(velocity * delta)
+
 
 func pass_away():
 	queue_free()

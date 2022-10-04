@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://catchebles/mine/mine.png" type="Texture" id=1]
 [ext_resource path="res://catchebles/mine/Mine.gd" type="Script" id=2]
+[ext_resource path="res://catchebles/mine/red_light.png" type="Texture" id=3]
+[ext_resource path="res://catchebles/mine/Counter.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 45.0
@@ -10,6 +12,7 @@ radius = 45.0
 collision_layer = 6
 collision_mask = 2
 script = ExtResource( 2 )
+ticks = 5
 
 [node name="Mine" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
@@ -20,15 +23,18 @@ position = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+process_mode = 0
 
-[node name="Label" type="Label" parent="."]
-margin_left = -18.0
-margin_top = -5.0
-margin_right = 22.0
-margin_bottom = 9.0
-text = "test"
-align = 1
+[node name="Counter" type="TextureRect" parent="."]
+modulate = Color( 1.5, 1, 1, 1 )
+margin_left = -24.0
+margin_top = -3.0
+margin_right = 16.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+script = ExtResource( 4 )
 
-[connection signal="timeout" from="Timer" to="." method="detonate"]
+[connection signal="timeout" from="Timer" to="." method="tick"]

@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
 [ext_resource path="res://catchebles/fish/Fish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://catchebles/Spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://catchebles/seagul/Seagul.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level/ShakingCamera.gd" type="Script" id=6]
+[ext_resource path="res://level/ShakingCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://catchebles/big_fish/BigFish.tscn" type="PackedScene" id=7]
+[ext_resource path="res://catchebles/mine/Mine.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -33,17 +34,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 385 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
-script = ExtResource( 6 )
-NOISE_SHAKE_STRENGTH = 30.0
+[node name="ShakingCamera" parent="." groups=["shakable"] instance=ExtResource( 6 )]
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 98, 0 )
 curve = SubResource( 1 )
-fish_types = [ ExtResource( 3 ) ]
+fish_types = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 8 ) ]
 
 [node name="SpawnerSeagull" parent="." instance=ExtResource( 4 )]
 position = Vector2( 130, -21 )
@@ -51,5 +47,3 @@ fish_types = [ ExtResource( 5 ) ]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
-
-[connection signal="hooked" from="Moryak" to="Camera2D" method="apply_noise_shake"]

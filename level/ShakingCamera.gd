@@ -42,8 +42,8 @@ func apply_random_shake() -> void:
 	shake_strength = RANDOM_SHAKE_STRENGTH
 	shake_type = ShakeType.Random
 	
-func apply_noise_shake() -> void:
-	shake_strength = NOISE_SHAKE_STRENGTH
+func apply_noise_shake(power: float = NOISE_SHAKE_STRENGTH) -> void:
+	shake_strength = power
 	shake_type = ShakeType.Noise
 	
 func apply_noise_sway() -> void:
