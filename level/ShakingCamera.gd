@@ -80,7 +80,3 @@ func get_random_offset() -> Vector2:
 		rand.randf_range(-shake_strength, shake_strength),
 		rand.randf_range(-shake_strength, shake_strength)
 	)
-
-
-func _on_PoleHook_hooked(body) -> void:
-	pass # Replace with function body.

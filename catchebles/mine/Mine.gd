@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func get_hooked(hook_with: RemoteTransform2D):
-	var hooked_body: Node2D = get_node(hook_with.remote_path)
+	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
 	if hooked_body != null: return
 
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -29,4 +29,5 @@ func tick():
 
 
 func _physics_process(delta: float) -> void:
+	# warning-ignore:return_value_discarded
 	move_and_collide(velocity * delta)

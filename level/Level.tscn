@@ -30,11 +30,8 @@ position = Vector2( 0, 34 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 position = Vector2( -351, 167 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="ShakingCamera" parent="." groups=["shakable"] instance=ExtResource( 6 )]
+[node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 98, 0 )

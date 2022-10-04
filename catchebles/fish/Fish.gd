@@ -11,9 +11,9 @@ func _ready():
 
 
 func get_hooked(hook_with: RemoteTransform2D):
-	if !hook_with.remote_path.is_empty(): return
+	if !get_node_or_null(hook_with.remote_path) == null: return
 	$Bubbles.emitting = true
-	
+
 	$CollisionShape2D.set_deferred("disabled", true)
 
 	hook_with.remote_path = get_path()
@@ -21,6 +21,7 @@ func get_hooked(hook_with: RemoteTransform2D):
 
 
 func _physics_process(delta):
+	# warning-ignore:return_value_discarded
 	move_and_collide(velocity * delta)
 
 
