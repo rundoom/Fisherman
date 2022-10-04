@@ -15,4 +15,4 @@ func _physics_process(_delta):
 func _on_PoleHook_body_entered(body):
 	if body.has_method("get_hooked"):
 		body.get_hooked($RemoteTransform2D)
-		owner.emit_signal("hooked")
+		get_tree().call_group("shakable", "apply_noise_shake")

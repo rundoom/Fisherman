@@ -2,7 +2,7 @@
 
 [ext_resource path="res://level/ShakingCamera.gd" type="Script" id=1]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="Camera2D" type="Camera2D" groups=["shakable"]]
 position = Vector2( 0, 385 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
