@@ -1,8 +1,9 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://level/sea-landscape-with-calm-water-surface-clouds-blue-sky_107791-4145.jpg" type="Texture" id=1]
+[ext_resource path="res://level/water_surface.png" type="Texture" id=1]
 [ext_resource path="res://level/underwater tileable.png" type="Texture" id=2]
 [ext_resource path="res://level/Bottom.gd" type="Script" id=3]
+[ext_resource path="res://level/sky_background.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -16,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1382.12, 771.673 ) ]
+"values": [ Rect2( 0, 0, 1382.12, 296 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Underwater/Underwater:region_rect")
@@ -30,10 +31,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Rect2( 0, 0, 1023.16, 768.8 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Surface/Background:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1380, 470 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "surface_move"
-length = 3.0
+length = 6.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Surface/Surface:region_rect")
@@ -42,10 +55,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1382.12, 771.673 ), Rect2( 1382.1, 0, 1382.12, 771.673 ) ]
+"values": [ Rect2( 0, 0, 1382.12, 296 ), Rect2( 2764.2, 0, 1382.12, 296 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Underwater/Underwater:region_rect")
@@ -54,10 +67,22 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1023.16, 768.8 ), Rect2( 1023.1, 0, 1023.16, 768.8 ) ]
+"values": [ Rect2( 0, 0, 1023.16, 768.8 ), Rect2( 2046.2, 0, 1023.16, 768.8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Surface/Background:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1380, 470 ), Rect2( 1380, 0, 1380, 470 ) ]
 }
 
 [sub_resource type="Shader" id=4]
@@ -86,10 +111,6 @@ shader = SubResource( 4 )
 shader_param/speed = 0.01
 shader_param/strength = 0.03
 shader_param/noize = SubResource( 5 )
-
-[sub_resource type="SegmentShape2D" id=7]
-a = Vector2( 640, -193 )
-b = Vector2( -743, -191 )
 
 [sub_resource type="LineShape2D" id=8]
 
@@ -126,9 +147,16 @@ build_mode = 1
 polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -169, 664.952 )
 
 [node name="Surface" type="Sprite" parent="Surface"]
+position = Vector2( 2, 160 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1382.12, 771.673 )
+region_rect = Rect2( 0, 0, 1382.12, 296 )
+
+[node name="Background" type="Sprite" parent="Surface"]
+position = Vector2( 1, -223.218 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1380, 470 )
 
 [node name="Underwater" type="Area2D" parent="."]
 collision_layer = 4
@@ -141,10 +169,6 @@ scale = Vector2( 1.34803, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1023.16, 768.8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Underwater"]
-position = Vector2( 51, 499 )
-shape = SubResource( 7 )
 
 [node name="Borders" type="Area2D" parent="."]
 position = Vector2( -18, 798 )
