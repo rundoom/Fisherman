@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1382.12, 296 ) ]
+"values": [ Rect2( 0, 0, 1382.12, 147 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Underwater/Underwater:region_rect")
@@ -43,6 +43,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Rect2( 0, 0, 1380, 470 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Surface/Surface2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1382.12, 147 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "surface_move"
@@ -58,7 +70,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1382.12, 296 ), Rect2( 2764.2, 0, 1382.12, 296 ) ]
+"values": [ Rect2( 0, 0, 1382.12, 147 ), Rect2( 1382.1, 0, 1382.12, 147 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Underwater/Underwater:region_rect")
@@ -83,6 +95,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Rect2( 0, 0, 1380, 470 ), Rect2( 1380, 0, 1380, 470 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Surface/Surface2:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1382.12, 147 ), Rect2( 2764.2, 0, 1382.12, 147 ) ]
 }
 
 [sub_resource type="Shader" id=4]
@@ -147,10 +171,16 @@ build_mode = 1
 polygon = PoolVector2Array( -168, 511.188, 1212.46, 515.061, 1209.76, 660.917, -169, 664.952 )
 
 [node name="Surface" type="Sprite" parent="Surface"]
-position = Vector2( 2, 160 )
+position = Vector2( 0.502838, 87.0016 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1382.12, 296 )
+region_rect = Rect2( 0, 0, 1382.12, 147 )
+
+[node name="Surface2" type="Sprite" parent="Surface"]
+position = Vector2( 0.5, 234 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1382.12, 147 )
 
 [node name="Background" type="Sprite" parent="Surface"]
 position = Vector2( 1, -223.218 )
