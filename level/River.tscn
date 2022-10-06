@@ -114,7 +114,7 @@ code = "shader_type canvas_item;
 
 
 uniform sampler2D noize;
-uniform float speed : hint_range(0.01, 0.5, 0.01) = 0.1;
+uniform float speed : hint_range(0.0, 0.5, 0.01) = 0.1;
 uniform float strength : hint_range(0.01, 0.5, 0.01) = 0.1;
 
 
@@ -132,7 +132,7 @@ noise = SubResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 4 )
-shader_param/speed = 0.01
+shader_param/speed = 0.0
 shader_param/strength = 0.03
 shader_param/noize = SubResource( 5 )
 
@@ -183,7 +183,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1382.12, 147 )
 
 [node name="Background" type="Sprite" parent="Surface"]
-position = Vector2( 1, -223.218 )
+position = Vector2( -0.366455, -221.536 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1380, 470 )
