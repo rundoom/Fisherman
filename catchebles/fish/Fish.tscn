@@ -1,8 +1,8 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.gd" type="Script" id=1]
 [ext_resource path="res://catchebles/fish/loosesprites_aquariumfish.png" type="Texture" id=2]
-[ext_resource path="res://catchebles/RemainsParticles.gd" type="Script" id=3]
+[ext_resource path="res://catchebles/RemainsParticles.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -140,12 +140,6 @@ scale_curve = SubResource( 23 )
 flags = 4
 load_path = "res://.import/Bubble.png-64b50ecd2edfd81bc3d16ed0d756eeaf.stex"
 
-[sub_resource type="CanvasItemMaterial" id=30]
-particles_animation = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 5
-particles_anim_loop = false
-
 [sub_resource type="Curve" id=35]
 min_value = -360.0
 max_value = 360.0
@@ -160,10 +154,11 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 [sub_resource type="GradientTexture" id=34]
 gradient = SubResource( 33 )
 
-[sub_resource type="ParticlesMaterial" id=29]
+[sub_resource type="ParticlesMaterial" id=36]
+resource_local_to_scene = true
 emission_shape = 5
-emission_ring_radius = 20.0
-emission_ring_inner_radius = 20.0
+emission_ring_radius = 40.0
+emission_ring_inner_radius = 40.0
 emission_ring_height = 0.0
 emission_ring_axis = Vector3( 0, 0, 1 )
 flag_disable_z = true
@@ -178,7 +173,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 360.0
 angle_random = 1.0
-scale = 4.0
+scale = 8.0
 color_ramp = SubResource( 34 )
 anim_offset = 1.0
 anim_offset_random = 1.0
@@ -211,13 +206,5 @@ local_coords = false
 process_material = SubResource( 21 )
 texture = SubResource( 28 )
 
-[node name="RemainsParticles" type="Particles2D" parent="."]
-material = SubResource( 30 )
-emitting = false
-amount = 32
-one_shot = true
-speed_scale = 2.0
-explosiveness = 0.78
-local_coords = false
-process_material = SubResource( 29 )
-script = ExtResource( 3 )
+[node name="RemainsParticles" parent="." instance=ExtResource( 3 )]
+process_material = SubResource( 36 )

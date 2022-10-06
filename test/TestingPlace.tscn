@@ -16,12 +16,12 @@ glow_blend_mode = 0
 position = Vector2( 1, 0 )
 
 [node name="BigFish" parent="." instance=ExtResource( 3 )]
-position = Vector2( 977, 546 )
+position = Vector2( 920, 629 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 
 [node name="Fish" parent="." instance=ExtResource( 1 )]
-position = Vector2( 652, 446 )
+position = Vector2( 428, 111 )
 velocity = Vector2( 0, 0 )
 
 [node name="Fish2" parent="." instance=ExtResource( 1 )]
@@ -37,7 +37,7 @@ position = Vector2( 763, 86 )
 velocity = Vector2( 0, 0 )
 
 [node name="Mine" parent="." instance=ExtResource( 5 )]
-position = Vector2( 175, 439 )
+position = Vector2( 120, 622 )
 ticks = 3
 velocity = Vector2( 0, 0 )
 

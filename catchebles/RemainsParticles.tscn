@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://catchebles/RemainsParticles.gd" type="Script" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=30]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 10
+particles_anim_loop = false
+
+[sub_resource type="Curve" id=35]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=32]
+curve = SubResource( 35 )
+
+[sub_resource type="Gradient" id=33]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=34]
+gradient = SubResource( 33 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+resource_local_to_scene = true
+emission_shape = 5
+emission_ring_radius = 40.0
+emission_ring_inner_radius = 40.0
+emission_ring_height = 0.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 98.22
+angular_velocity = 227.43
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 32 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+color_ramp = SubResource( 34 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="RemainsParticles" type="Particles2D"]
+material = SubResource( 30 )
+emitting = false
+amount = 32
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.78
+local_coords = false
+process_material = SubResource( 29 )
+script = ExtResource( 1 )

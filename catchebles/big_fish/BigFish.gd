@@ -30,3 +30,6 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	
 func pass_away():
 	queue_free()
+
+
+
