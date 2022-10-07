@@ -7,7 +7,7 @@ func hunt_egg(egg_trasform):
 
 
 func get_hooked(hook_with: RemoteTransform2D):
-	var hooked_body: Node2D = get_node(hook_with.remote_path)
+	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
 	if !hooked_body is Seagul: return
 	
 	$AnimationPlayer.current_animation = "RESET"

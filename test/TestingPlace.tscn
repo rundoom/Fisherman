@@ -21,14 +21,14 @@ position = Vector2( 1, 0 )
 position = Vector2( 920, 629 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 312 )
+position = Vector2( 108, 188 )
 
 [node name="Fish" parent="." instance=ExtResource( 1 )]
-position = Vector2( 526, 579 )
+position = Vector2( 515, 459 )
 velocity = Vector2( 0, 0 )
 
 [node name="Fish2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1025, 159 )
+position = Vector2( 658, 554 )
 velocity = Vector2( 0, 0 )
 
 [node name="Seagul2" parent="." instance=ExtResource( 4 )]
@@ -54,4 +54,4 @@ position = Vector2( 397, 415 )
 position = Vector2( 410, 151 )
 
 [node name="BubbleEmitter" parent="." instance=ExtResource( 7 )]
-position = Vector2( 560, 949 )
+position = Vector2( 697, 467 )

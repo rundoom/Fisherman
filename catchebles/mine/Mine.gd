@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func get_hooked(hook_with: RemoteTransform2D):
 	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
-	if hooked_body != null: return
+	if is_instance_valid(hooked_body): return
 
 	$CollisionShape2D.set_deferred("disabled", true)
 

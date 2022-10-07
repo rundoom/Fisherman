@@ -192,10 +192,9 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1380, 470 )
 
-[node name="Underwater" type="Area2D" parent="."]
+[node name="Underwater" type="Area2D" parent="." groups=["bubble_place"]]
 collision_layer = 8
 collision_mask = 8
-gravity_vec = Vector2( 0, -10 )
 script = ExtResource( 5 )
 
 [node name="Underwater" type="Sprite" parent="Underwater"]

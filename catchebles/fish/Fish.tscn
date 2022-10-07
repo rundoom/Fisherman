@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.gd" type="Script" id=1]
 [ext_resource path="res://catchebles/fish/loosesprites_aquariumfish.png" type="Texture" id=2]
@@ -104,44 +104,6 @@ animations = [ {
 radius = 20.0
 height = 28.0
 
-[sub_resource type="Curve" id=26]
-min_value = -200.0
-max_value = 200.0
-_data = [ Vector2( 0.0110294, 115 ), 0.0, 0.0, 0, 0, Vector2( 0.125, -200 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=27]
-curve = SubResource( 26 )
-
-[sub_resource type="Curve" id=22]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.985294, 0 ), -0.0634032, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=23]
-curve = SubResource( 22 )
-
-[sub_resource type="Curve" id=24]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 24 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-trail_size_modifier = SubResource( 25 )
-emission_shape = 1
-emission_sphere_radius = 29.08
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, -200, 0 )
-initial_velocity = 110.35
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel_curve = SubResource( 27 )
-scale_random = 0.86
-scale_curve = SubResource( 23 )
-
-[sub_resource type="StreamTexture" id=28]
-flags = 4
-load_path = "res://.import/Bubble.png-64b50ecd2edfd81bc3d16ed0d756eeaf.stex"
-
 [sub_resource type="Curve" id=35]
 min_value = -360.0
 max_value = 360.0
@@ -189,25 +151,13 @@ script = ExtResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "octopus"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
 shape = SubResource( 37 )
-
-[node name="Bubbles" type="Particles2D" parent="."]
-emitting = false
-amount = 32
-lifetime = 2.0
-one_shot = true
-speed_scale = 1.48
-explosiveness = 0.71
-randomness = 0.68
-local_coords = false
-process_material = SubResource( 21 )
-texture = SubResource( 28 )
 
 [node name="RemainsParticles" parent="." instance=ExtResource( 3 )]
 process_material = SubResource( 36 )
