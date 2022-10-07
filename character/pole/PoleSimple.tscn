@@ -8,8 +8,8 @@
 [sub_resource type="CircleShape2D" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 26.091
-height = 47.296
+radius = 8.06155
+height = 0.0
 
 [node name="PoleSimple" type="Node2D"]
 
@@ -46,7 +46,7 @@ contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/PoleHook"]
-position = Vector2( -36, 6 )
+position = Vector2( -55, 19 )
 rotation = -1.4333
 shape = SubResource( 3 )
 

@@ -1,5 +1,6 @@
 extends Area2D
 
 
-func water_splash(body: Node) -> void:
-	$Particles2D.emitting = true
+func _on_Underwater_body_exited(body: Node) -> void:
+	if body.has_method("on_depth_exiting"):
+		body.on_depth_exiting()

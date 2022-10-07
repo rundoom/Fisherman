@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.gd" type="Script" id=1]
 [ext_resource path="res://catchebles/fish/loosesprites_aquariumfish.png" type="Texture" id=2]
 [ext_resource path="res://catchebles/RemainsParticles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BubbleEmitter.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -99,8 +100,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=20]
-radius = 47.0956
+[sub_resource type="CapsuleShape2D" id=37]
+radius = 20.0
+height = 28.0
 
 [sub_resource type="Curve" id=26]
 min_value = -200.0
@@ -187,12 +189,13 @@ script = ExtResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "octopus"
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 20 )
+position = Vector2( 0, -8 )
+shape = SubResource( 37 )
 
 [node name="Bubbles" type="Particles2D" parent="."]
 emitting = false
@@ -208,3 +211,5 @@ texture = SubResource( 28 )
 
 [node name="RemainsParticles" parent="." instance=ExtResource( 3 )]
 process_material = SubResource( 36 )
+
+[node name="BubbleEmitter" parent="." instance=ExtResource( 4 )]

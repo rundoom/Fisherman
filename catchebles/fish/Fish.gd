@@ -13,7 +13,8 @@ func _ready():
 
 func get_hooked(hook_with: RemoteTransform2D):
 	if !get_node_or_null(hook_with.remote_path) == null: return
-	$Bubbles.emitting = true
+#	$Bubbles.emitting = true
+	$BubbleEmitter.create_bubbles(15, 70, 0.1, 0.5)
 
 	$CollisionShape2D.set_deferred("disabled", true)
 
