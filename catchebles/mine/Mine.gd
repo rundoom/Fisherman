@@ -9,14 +9,15 @@ func _ready() -> void:
 	$Counter.ticks_left = ticks
 
 
-func get_hooked(hook_with: RemoteTransform2D):
+func get_hooked(hook_with: RemoteTransform2D) -> bool:
 	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
-	if is_instance_valid(hooked_body): return
+	if is_instance_valid(hooked_body): return false
 
 	$CollisionShape2D.set_deferred("disabled", true)
 
 	hook_with.remote_path = get_path()
 	$Timer.start()
+	return true
 
 
 func tick():

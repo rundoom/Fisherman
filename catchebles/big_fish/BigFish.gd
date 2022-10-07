@@ -6,9 +6,9 @@ func hunt_egg(egg_trasform):
 	$AnimationPlayer.play("devour")
 
 
-func get_hooked(hook_with: RemoteTransform2D):
+func get_hooked(hook_with: RemoteTransform2D) -> bool:
 	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
-	if !hooked_body is Seagul: return
+	if !hooked_body is Seagul: return false
 	
 	$AnimationPlayer.current_animation = "RESET"
 	$AnimationPlayer.advance(0)
@@ -22,6 +22,7 @@ func get_hooked(hook_with: RemoteTransform2D):
 	hook_with.remote_path = get_path()
 	
 	if hooked_body.has_method("pass_away"): hooked_body.pass_away()
+	return true
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
