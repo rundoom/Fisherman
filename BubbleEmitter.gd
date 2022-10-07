@@ -13,12 +13,11 @@ func create_bubbles(count: int = 1, spread: float = 0, min_scale: float = 1.0, m
 		var is_colliding = get_world_2d().direct_space_state.intersect_point(
 			bubble_position, 1, [], 8, false, true
 		).size() > 0
-
+		
 		if !is_colliding: continue
 		
-		var bubble_scale = rand_range(min_scale, max_scale)
-		
 		var bubble = Bubble.instance()
+		var bubble_scale = rand_range(min_scale, max_scale)
 		bubble.set_size(Vector2(bubble_scale, bubble_scale))
 		bubble.global_position = bubble_position
 		

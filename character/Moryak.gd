@@ -4,12 +4,7 @@ extends KinematicBody2D
 signal hooked
 
 export var speed = 400
-var screen_size
 var velocity = Vector2.ZERO
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	screen_size = get_viewport_rect().size
 
 
 func _process(delta):
