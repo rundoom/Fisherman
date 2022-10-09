@@ -17,10 +17,11 @@ func _on_PoleHook_body_entered(body: Node2D):
 		var is_hooked = body.get_hooked($RemoteTransform2D)
 		
 		# warning-ignore:return_value_discarded
-		if is_hooked: body.connect("tree_exiting", self, "_remove_connection")
+		if is_hooked: body.connect("tree_exiting", self, "_remove_connection", [body])
 		
 		get_tree().call_group("shakable", "apply_noise_shake")
 
 
-func _remove_connection():
-	$RemoteTransform2D.remote_path = ""
+func _remove_connection(from_body: Node):
+	var current_remote = get_node_or_null($RemoteTransform2D.remote_path)
+	if current_remote == from_body: $RemoteTransform2D.remote_path = ""
