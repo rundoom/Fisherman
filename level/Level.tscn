@@ -23,7 +23,7 @@ glow_blend_mode = 0
 position = Vector2( 2, 1 )
 
 [node name="BigFish" parent="." instance=ExtResource( 7 )]
-position = Vector2( 331, 1319 )
+position = Vector2( 356, 1243 )
 
 [node name="River" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 34 )
