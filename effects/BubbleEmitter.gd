@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const Bubble: PackedScene = preload("res://Bubble.tscn")
+const Bubble: PackedScene = preload("res://effects/Bubble.tscn")
 
 
 func create_bubbles(count: int = 1, spread: float = 0, min_scale: float = 1.0, max_scale: float = 1.0):

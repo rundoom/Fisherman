@@ -6,7 +6,7 @@
 [ext_resource path="res://catchebles/seagul/Seagul.tscn" type="PackedScene" id=4]
 [ext_resource path="res://catchebles/mine/Mine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level/ShakingCamera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://BubbleEmitter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://effects/BubbleEmitter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
@@ -18,7 +18,7 @@ glow_blend_mode = 0
 position = Vector2( 1, 0 )
 
 [node name="BigFish" parent="." instance=ExtResource( 3 )]
-position = Vector2( 920, 629 )
+position = Vector2( 925, 843 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 position = Vector2( 108, 188 )
