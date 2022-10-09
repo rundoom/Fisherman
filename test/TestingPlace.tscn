@@ -6,7 +6,7 @@
 [ext_resource path="res://catchebles/seagul/Seagul.tscn" type="PackedScene" id=4]
 [ext_resource path="res://catchebles/mine/Mine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level/ShakingCamera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://effects/BubbleEmitter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://effects/bubble/BubbleEmitter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]

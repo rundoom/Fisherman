@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bubble_fancy.png-a4768c6c1d021174fd96568915075ba9.stex"
+path="res://.import/bubble_fancy.png-d3d65c73fb750e9c9d94fb8d7d9c5da5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://effects/bubble_fancy.png"
-dest_files=[ "res://.import/bubble_fancy.png-a4768c6c1d021174fd96568915075ba9.stex" ]
+source_file="res://effects/bubble/bubble_fancy.png"
+dest_files=[ "res://.import/bubble_fancy.png-d3d65c73fb750e9c9d94fb8d7d9c5da5.stex" ]
 
 [params]
 

@@ -24,6 +24,7 @@ func tick():
 	if ticks == 0:
 		get_tree().call_group("detonatable", "pass_away")
 		get_tree().call_group("shakable", "apply_noise_shake", 120.0)
+		$Explosion.explode()
 		queue_free()
 	ticks -= 1
 	$Counter.ticks_left = ticks
