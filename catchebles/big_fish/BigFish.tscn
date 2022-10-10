@@ -157,6 +157,9 @@ anims/devour = SubResource( 7 )
 [node name="HookPlace" type="Position2D" parent="."]
 position = Vector2( 20, -128 )
 
+[node name="CatchPlace" type="Position2D" parent="."]
+position = Vector2( -32, -41 )
+
 [node name="BigFish" type="KinematicBody2D" parent="."]
 collision_layer = 2
 collision_mask = 0

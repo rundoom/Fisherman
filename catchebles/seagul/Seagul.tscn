@@ -207,13 +207,13 @@ scale_curve = SubResource( 23 )
 
 [node name="Seagul" type="KinematicBody2D" groups=["detonatable"]]
 collision_layer = 6
-collision_mask = 2
+collision_mask = 0
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "seagul"
-frame = 2
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

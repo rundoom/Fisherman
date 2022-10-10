@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BigFish",
+"language": "GDScript",
+"path": "res://catchebles/big_fish/BigFish.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Fish",
 "language": "GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://level/ShakingCamera.gd"
 } ]
 _global_script_class_icons={
+"BigFish": "",
 "Fish": "",
 "GitAPI": "",
 "RemainsParticles": "",
