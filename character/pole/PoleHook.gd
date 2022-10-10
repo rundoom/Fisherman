@@ -17,7 +17,8 @@ func _on_PoleHook_body_entered(body: Node2D):
 		var is_hooked = body.get_hooked($RemoteTransform2D)
 		
 		# warning-ignore:return_value_discarded
-		if is_hooked: body.connect("tree_exiting", self, "_remove_connection", [body])
+		if body.is_connected("tree_exiting", self, "_remove_connection") and is_hooked:
+			body.connect("tree_exiting", self, "_remove_connection", [body])
 		
 		get_tree().call_group("shakable", "apply_noise_shake")
 
