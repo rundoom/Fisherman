@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://effects/bubble/BubbleEmitter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=8]
 [ext_resource path="res://catchebles/dragon/Dragon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://catchebles/fish/FishLittle.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -19,7 +20,7 @@ glow_blend_mode = 0
 position = Vector2( 1, 0 )
 
 [node name="BigFish" parent="." instance=ExtResource( 3 )]
-position = Vector2( 207, 554 )
+position = Vector2( -68, 903 )
 
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 position = Vector2( 108, 188 )
@@ -59,3 +60,7 @@ position = Vector2( 697, 467 )
 
 [node name="Dragon" parent="." instance=ExtResource( 9 )]
 position = Vector2( -168, 546 )
+
+[node name="LittleFish" parent="." instance=ExtResource( 10 )]
+position = Vector2( 994, 655 )
+velocity = Vector2( -100, 0 )

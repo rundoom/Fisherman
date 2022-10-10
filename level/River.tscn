@@ -193,8 +193,10 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1380, 470 )
 
 [node name="Underwater" type="Area2D" parent="." groups=["bubble_place"]]
-collision_layer = 8
-collision_mask = 8
+collision_layer = 24
+collision_mask = 24
+space_override = 3
+linear_damp = 0.5
 script = ExtResource( 5 )
 
 [node name="Underwater" type="Sprite" parent="Underwater"]

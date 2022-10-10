@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 
-onready var sprite = $AnimatedSprite
 export var velocity:Vector2
 
 

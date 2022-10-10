@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://catchebles/big_fish/BigFish.tscn" type="PackedScene" id=7]
 [ext_resource path="res://catchebles/mine/Mine.tscn" type="PackedScene" id=8]
 [ext_resource path="res://catchebles/dragon/Dragon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://catchebles/fish/FishLittle.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -37,7 +38,7 @@ position = Vector2( -351, 167 )
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 98, 0 )
 curve = SubResource( 1 )
-fish_types = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 8 ) ]
+fish_types = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ]
 
 [node name="SpawnerSeagull" parent="." instance=ExtResource( 4 )]
 position = Vector2( 130, -21 )

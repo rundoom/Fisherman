@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
+"base": "KinematicBody2D",
+"class": "RealFish",
+"language": "GDScript",
+"path": "res://catchebles/fish/FishLittle.gd"
+}, {
 "base": "Particles2D",
 "class": "RemainsParticles",
 "language": "GDScript",
@@ -43,6 +48,7 @@ _global_script_class_icons={
 "BigFish": "",
 "Fish": "",
 "GitAPI": "",
+"RealFish": "",
 "RemainsParticles": "",
 "Seagul": "",
 "ShakingCamera": ""

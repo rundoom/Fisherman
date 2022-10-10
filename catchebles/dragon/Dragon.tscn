@@ -27,8 +27,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 30.256
-height = 155.461
+radius = 57.0904
+height = 201.366
 
 [node name="Dragon" type="KinematicBody2D" groups=["big_fish_hunters"]]
 collision_layer = 6
@@ -38,6 +38,7 @@ script = ExtResource( 2 )
 [node name="DragonSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
