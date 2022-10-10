@@ -25,7 +25,7 @@ glow_blend_mode = 0
 position = Vector2( 2, 1 )
 
 [node name="BigFish" parent="." instance=ExtResource( 7 )]
-position = Vector2( 356, 1243 )
+position = Vector2( 356, 934 )
 
 [node name="River" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 34 )
@@ -34,6 +34,7 @@ position = Vector2( 0, 34 )
 position = Vector2( -351, 167 )
 
 [node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
+position = Vector2( -18, 114 )
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 98, 0 )
@@ -48,4 +49,4 @@ fish_types = [ ExtResource( 5 ) ]
 environment = SubResource( 2 )
 
 [node name="Dragon" parent="." instance=ExtResource( 9 )]
-position = Vector2( -816, -44 )
+position = Vector2( -904, -44 )

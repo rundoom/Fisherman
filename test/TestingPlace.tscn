@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://catchebles/fish/Fish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=8]
 [ext_resource path="res://catchebles/dragon/Dragon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://catchebles/fish/FishLittle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://effects/explosion/white_circle.svg" type="Texture" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -64,3 +65,9 @@ position = Vector2( -168, 546 )
 [node name="LittleFish" parent="." instance=ExtResource( 10 )]
 position = Vector2( 994, 655 )
 velocity = Vector2( -100, 0 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 563, 0 )
+texture = ExtResource( 11 )
+energy = 0.8
+shadow_enabled = true
