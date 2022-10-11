@@ -10,7 +10,7 @@
 [ext_resource path="res://level/River.tscn" type="PackedScene" id=8]
 [ext_resource path="res://catchebles/dragon/Dragon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://catchebles/fish/FishLittle.tscn" type="PackedScene" id=10]
-[ext_resource path="res://effects/explosion/white_circle.svg" type="Texture" id=11]
+[ext_resource path="res://effects/UnderwaterLight.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -63,11 +63,14 @@ position = Vector2( 697, 467 )
 position = Vector2( -168, 546 )
 
 [node name="LittleFish" parent="." instance=ExtResource( 10 )]
-position = Vector2( 994, 655 )
-velocity = Vector2( -100, 0 )
+position = Vector2( 410, 405 )
+velocity = Vector2( 0, 0 )
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 563, 0 )
-texture = ExtResource( 11 )
-energy = 0.8
-shadow_enabled = true
+[node name="LittleFish2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 915, 743 )
+velocity = Vector2( 0, 0 )
+
+[node name="Light2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1098, -384 )
+offset = Vector2( -0.487699, 10.9594 )
+energy = 0.2

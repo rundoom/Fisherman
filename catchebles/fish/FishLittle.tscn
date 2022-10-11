@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://catchebles/fish/FishLittle.gd" type="Script" id=1]
 [ext_resource path="res://catchebles/fish/fish_little.png" type="Texture" id=2]
@@ -99,14 +99,20 @@ tracks/1/keys = {
 "values": [ 0.0, 7.7 ]
 }
 
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 999, 128, 468, 291 )
+
+[sub_resource type="OccluderPolygon2D" id=43]
+polygon = PoolVector2Array( -70.8079, -116.249, -105.608, -70.9313, -136.724, -64.3784, -175.675, -126.574, -199.02, -47.2045, -222.778, -39.9869, -276.268, -100.76, -313.798, -14.4631, -348.685, -5.87955, -338.645, 6.15477, -137.2, 64.7281, -51.8316, 70.1298, 21.2822, 64.4525, 34.5893, 36.2859, 19.2056, -20.9227, -14.4248, -78.7461, -31.9568, -75.8304 )
+
 [sub_resource type="AtlasTexture" id=38]
 resource_local_to_scene = true
 atlas = ExtResource( 2 )
 region = Rect2( 160, 601, 2389, 1295 )
 
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 2 )
-region = Rect2( 999, 128, 468, 291 )
+[sub_resource type="OccluderPolygon2D" id=42]
+polygon = PoolVector2Array( -25, -45, -39, -38, -42, -33, -78, -17, -90, -3, -89, 2, -79, 9, -75, 4, -70.2688, 9.40712, -66.0122, 4.83677, -62.9539, 10.2706, -58.9739, 5.61743, -57.1027, 11.2276, -51.9883, 9.20637, -48.7285, 14.9688, -51.1637, 16.7982, -52.861, 18.2546, -51.1862, 22.6132, -48, 24, -38, 32, -35, 42, -28, 30, -27, 43, -18, 39, -15, 31, 4, 28, 20, 13, 22, 7, 37, 16, 50, 36, 61, 23, 62, 16, 64, 27, 69, 26, 70, 6, 70, -18, 63, -23, 71, -23, 77, -23, 65, -38, 47, -40, 23, -23, 19, -19, -4, -32, 5, -39, 3, -43 )
 
 [sub_resource type="CapsuleShape2D" id=37]
 radius = 18.9999
@@ -129,16 +135,24 @@ root_node = NodePath("../..")
 anims/RESET = SubResource( 41 )
 anims/chew = SubResource( 40 )
 
-[node name="FishLittle" type="Sprite" parent="ImageContainer"]
-position = Vector2( -8, -1 )
-scale = Vector2( 0.07, 0.07 )
-texture = SubResource( 38 )
-
 [node name="FishLittle2" type="Sprite" parent="ImageContainer"]
 position = Vector2( -48, 19 )
 scale = Vector2( 0.07, 0.07 )
 texture = SubResource( 39 )
 offset = Vector2( -150, -37 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ImageContainer/FishLittle2"]
+occluder = SubResource( 43 )
+
+[node name="FishLittle" type="Sprite" parent="ImageContainer"]
+position = Vector2( -8, -1 )
+scale = Vector2( 0.07, 0.07 )
+texture = SubResource( 38 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ImageContainer/FishLittle"]
+position = Vector2( 114.286, 14.2857 )
+scale = Vector2( 14.2857, 14.2857 )
+occluder = SubResource( 42 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
