@@ -38,6 +38,7 @@ script = ExtResource( 2 )
 [node name="DragonSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,5 +49,5 @@ shape = SubResource( 5 )
 [node name="Catcher" type="RemoteTransform2D" parent="."]
 position = Vector2( 28, 86 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Catcher"]
 one_shot = true
