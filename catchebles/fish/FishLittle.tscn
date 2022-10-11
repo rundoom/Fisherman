@@ -132,6 +132,7 @@ process_material = SubResource( 36 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ImageContainer"]
 root_node = NodePath("../..")
+autoplay = "chew"
 anims/RESET = SubResource( 41 )
 anims/chew = SubResource( 40 )
 

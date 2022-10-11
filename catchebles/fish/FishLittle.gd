@@ -5,10 +5,6 @@ class_name RealFish
 export var velocity = Vector2(-1000, 0)
 
 	
-	
-func _ready() -> void:
-	$ImageContainer/AnimationPlayer.current_animation = "chew"
-	
 
 func get_hooked(hook_with: RemoteTransform2D) -> bool:
 	var hooked_body: Node2D = get_node_or_null(hook_with.remote_path)
