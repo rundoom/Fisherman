@@ -83,4 +83,5 @@ common/drop_mouse_on_gui_input_disabled=true
 
 [rendering]
 
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
