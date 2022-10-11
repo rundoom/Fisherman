@@ -27,4 +27,5 @@ func _physics_process(delta):
 
 
 func start_action():
-	velocity = Vector2(50, 0)
+	$CollisionShape2D.disabled = false
+	velocity = Vector2(25, 0)

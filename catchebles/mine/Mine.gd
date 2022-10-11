@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Mine
 
 
 export (int, 0, 10, 1) var ticks = 3
@@ -21,13 +22,17 @@ func get_hooked(hook_with: RemoteTransform2D) -> bool:
 
 
 func tick():
-	if ticks == 0:
+	if ticks == 0: pass_away()
+	
+	ticks -= 1
+	$Counter.ticks_left = ticks
+
+
+func pass_away():
 		get_tree().call_group("detonatable", "pass_away")
 		get_tree().call_group("shakable", "apply_noise_shake", 120.0)
 		$Explosion.explode()
 		queue_free()
-	ticks -= 1
-	$Counter.ticks_left = ticks
 
 
 func _physics_process(delta: float) -> void:

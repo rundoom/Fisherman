@@ -1,6 +1,5 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://catchebles/fish/Fish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://character/Moryak.tscn" type="PackedScene" id=2]
 [ext_resource path="res://catchebles/big_fish/BigFish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://catchebles/seagul/Seagul.tscn" type="PackedScene" id=4]
@@ -11,6 +10,7 @@
 [ext_resource path="res://catchebles/dragon/Dragon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://catchebles/fish/FishLittle.tscn" type="PackedScene" id=10]
 [ext_resource path="res://effects/UnderwaterLight.tscn" type="PackedScene" id=11]
+[ext_resource path="res://catchebles/kraken/Kraken.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -26,14 +26,6 @@ position = Vector2( -68, 903 )
 [node name="Moryak" parent="." instance=ExtResource( 2 )]
 position = Vector2( 108, 188 )
 
-[node name="Fish" parent="." instance=ExtResource( 1 )]
-position = Vector2( 515, 459 )
-velocity = Vector2( 0, 0 )
-
-[node name="Fish2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 515, 504 )
-velocity = Vector2( 0, 0 )
-
 [node name="Seagul2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 506 )
 velocity = Vector2( 0, 0 )
@@ -43,7 +35,7 @@ position = Vector2( 763, 86 )
 velocity = Vector2( 0, 0 )
 
 [node name="Mine" parent="." instance=ExtResource( 5 )]
-position = Vector2( 283, 843 )
+position = Vector2( 782, 775 )
 ticks = 3
 velocity = Vector2( 0, 0 )
 
@@ -60,17 +52,31 @@ position = Vector2( 410, 151 )
 position = Vector2( 697, 467 )
 
 [node name="Dragon" parent="." instance=ExtResource( 9 )]
-position = Vector2( -168, 546 )
+position = Vector2( -542, 102 )
 
 [node name="LittleFish" parent="." instance=ExtResource( 10 )]
 position = Vector2( 410, 405 )
 velocity = Vector2( 0, 0 )
 
 [node name="LittleFish2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 915, 743 )
+position = Vector2( 108, 574 )
 velocity = Vector2( 0, 0 )
 
 [node name="Light2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1098, -384 )
 offset = Vector2( -0.487699, 10.9594 )
 energy = 0.2
+
+[node name="Kraken" parent="." instance=ExtResource( 12 )]
+position = Vector2( 941, 529 )
+
+[node name="Label" type="Label" parent="." groups=["kraken_feed"]]
+visible = false
+margin_left = -450.0
+margin_top = -44.0
+margin_right = -380.0
+margin_bottom = -14.0
+rect_scale = Vector2( 16, 16 )
+text = "Hooray"
+align = 1
+valign = 1

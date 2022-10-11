@@ -4,8 +4,11 @@ class_name BigFish
 
 func hunt_egg(egg_trasform):
 	global_position.x = egg_trasform.origin.x
+	
 	$AnimationPlayer.play("devour")
-	get_tree().call_group("big_fish_hunters", "start_action") 
+	$BigFish/CollisionShape2D.disabled = false
+	
+	get_tree().call_group("big_fish_hunters", "start_action")
 
 
 func get_hooked(hook_with: RemoteTransform2D) -> bool:
@@ -46,7 +49,5 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	
 	
 func pass_away():
+	$BigFish.create_particle_texture()
 	queue_free()
-
-
-

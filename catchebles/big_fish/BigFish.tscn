@@ -47,7 +47,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "devour"
-length = 5.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("BigFish/BigFish/AnimatedSprite:animation")
 tracks/0/interp = 0
@@ -55,7 +55,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.2, 4.5 ),
+"times": PoolRealArray( 0, 1.2, 6.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ "calm", "aggressive", "calm" ]
@@ -67,10 +67,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 5 ),
-"transitions": PoolRealArray( 0.535887, 1, 1 ),
+"times": PoolRealArray( 0, 3, 6.7, 10 ),
+"transitions": PoolRealArray( 0.535887, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -300 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -300 ), Vector2( 0, -300 ), Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BigFish/BigFish:rotation_degrees")
@@ -175,9 +175,11 @@ animation = "calm"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BigFish"]
 position = Vector2( 0, -50 )
 shape = SubResource( 5 )
+disabled = true
 
 [node name="RemainsParticles" parent="BigFish" instance=ExtResource( 4 )]
 position = Vector2( 5, -50 )
+amount = 64
 process_material = SubResource( 36 )
 
 [node name="BubbleEmitter" parent="BigFish" instance=ExtResource( 5 )]

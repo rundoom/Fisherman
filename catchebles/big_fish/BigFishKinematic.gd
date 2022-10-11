@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 
 signal hooked(hook_with)
+signal pass_away
 
 onready var sprite = $AnimatedSprite
-signal pass_away
 
 
 func get_hooked(hook_with: RemoteTransform2D):
@@ -23,4 +23,3 @@ func create_particle_texture():
 
 func pass_away():
 	emit_signal("pass_away")
-	create_particle_texture()
