@@ -31,33 +31,45 @@ position = Vector2( 356, 934 )
 [node name="River" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 34 )
 
-[node name="Moryak" parent="." instance=ExtResource( 2 )]
-position = Vector2( -351, 167 )
+[node name="WawesUpper" parent="River/Surface/Waves" index="0"]
+position = Vector2( 1758.9, -79.7103 )
+offset = Vector2( -1.90735e-06, 313.445 )
+
+[node name="WawesMiddle" parent="River/Surface/Waves" index="1"]
+position = Vector2( 1750.92, 450.454 )
+
+[node name="Moryak" parent="River/Surface/Waves" index="3" instance=ExtResource( 2 )]
+position = Vector2( 1125.58, 157.498 )
+scale = Vector2( 1.87792, 1.87792 )
 
 [node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
-position = Vector2( -18, 114 )
+position = Vector2( -18, 323 )
+scale = Vector2( 1.02305, -0.333235 )
+zoom = Vector2( 2, 2 )
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
-position = Vector2( 98, 0 )
+position = Vector2( 984, 253 )
 curve = SubResource( 1 )
 fish_types = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ]
 
 [node name="SpawnerSeagull" parent="." instance=ExtResource( 4 )]
-position = Vector2( 130, -21 )
+position = Vector2( 999, -44 )
 fish_types = [ ExtResource( 5 ) ]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
 [node name="Dragon" parent="." instance=ExtResource( 9 )]
-position = Vector2( -904, -44 )
+position = Vector2( -1811, -44 )
 
 [node name="Light2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 688, 34 )
-offset = Vector2( -0.5, 6.26253 )
+position = Vector2( -1573, -202 )
+scale = Vector2( 3135, 112.661 )
+offset = Vector2( 0.500638, 7.80487 )
+energy = 0.3
 
 [node name="Kraken" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1163, 418 )
+position = Vector2( 1797, 437 )
 
 [node name="Label" type="Label" parent="." groups=["kraken_feed"]]
 visible = false
@@ -69,3 +81,5 @@ rect_scale = Vector2( 16, 16 )
 text = "Hooray"
 align = 1
 valign = 1
+
+[editable path="River"]

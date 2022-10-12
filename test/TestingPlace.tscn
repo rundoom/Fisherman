@@ -23,9 +23,6 @@ position = Vector2( 1, 0 )
 [node name="BigFish" parent="." instance=ExtResource( 3 )]
 position = Vector2( -68, 903 )
 
-[node name="Moryak" parent="." instance=ExtResource( 2 )]
-position = Vector2( 108, 188 )
-
 [node name="Seagul2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 506 )
 velocity = Vector2( 0, 0 )
@@ -48,6 +45,10 @@ position = Vector2( 397, 415 )
 [node name="River" parent="." instance=ExtResource( 8 )]
 position = Vector2( 410, 151 )
 
+[node name="Moryak" parent="River/Surface/Waves" index="3" instance=ExtResource( 2 )]
+position = Vector2( 924.64, 138.719 )
+scale = Vector2( 1.87792, 1.87792 )
+
 [node name="BubbleEmitter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 697, 467 )
 
@@ -63,7 +64,8 @@ position = Vector2( 108, 574 )
 velocity = Vector2( 0, 0 )
 
 [node name="Light2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1098, -384 )
+position = Vector2( 1903, -195 )
+scale = Vector2( 3137, 104.75 )
 offset = Vector2( -0.487699, 10.9594 )
 energy = 0.2
 
@@ -80,3 +82,5 @@ rect_scale = Vector2( 16, 16 )
 text = "Hooray"
 align = 1
 valign = 1
+
+[editable path="River"]

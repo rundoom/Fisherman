@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/fonts/DiloWorld-mLJLv.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://catchebles/kraken/Kraken.png" type="Texture" id=3]
+[ext_resource path="res://ui/DialogBox.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="DialogSystem" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 43.0
+margin_top = 446.0
+margin_right = 43.0
+margin_bottom = 446.0
+
+[node name="DialogBox" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 427.0
+color = Color( 0.545098, 0.67451, 0.788235, 1 )
+script = ExtResource( 4 )
+dialogPath = "res://new_textfile.tres"
+
+[node name="Name" type="RichTextLabel" parent="DialogBox"]
+anchor_right = 0.184
+margin_right = 835.584
+margin_bottom = 162.0
+custom_colors/default_color = Color( 0.905882, 0.890196, 0.678431, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "This is a text"
+text = "This is a text"
+
+[node name="Text" type="RichTextLabel" parent="DialogBox"]
+anchor_right = 0.184
+margin_left = 41.0
+margin_top = 162.0
+margin_right = 835.584
+margin_bottom = 427.0
+custom_colors/default_color = Color( 0.905882, 0.890196, 0.678431, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+visible_characters = 0
+percent_visible = 0.0
+text = "This is text"
+
+[node name="Portrait" type="Sprite" parent="DialogBox"]
+position = Vector2( 196, -80 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Timer" type="Timer" parent="DialogBox"]
+
+[node name="Indicator" type="Polygon2D" parent="DialogBox"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Indicator"]
+
+[node name="Tween" type="Tween" parent="DialogBox"]
