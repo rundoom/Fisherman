@@ -2,9 +2,9 @@ extends RigidBody2D
 
 
 func _ready():
-	yield(get_tree().current_scene, "ready")
+#	yield(get_tree().current_scene, "ready")
 	var temp_transform = global_transform
-	set_as_toplevel(true)
+	call_deferred("set_as_toplevel", true)
 	global_transform = temp_transform
 
 

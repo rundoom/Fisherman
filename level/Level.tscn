@@ -30,17 +30,7 @@ position = Vector2( 356, 934 )
 
 [node name="River" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 34 )
-
-[node name="WawesUpper" parent="River/Surface/Waves" index="0"]
-position = Vector2( 1758.9, -79.7103 )
-offset = Vector2( -1.90735e-06, 313.445 )
-
-[node name="WawesMiddle" parent="River/Surface/Waves" index="1"]
-position = Vector2( 1750.92, 450.454 )
-
-[node name="Moryak" parent="River/Surface/Waves" index="3" instance=ExtResource( 2 )]
-position = Vector2( 1125.58, 157.498 )
-scale = Vector2( 1.87792, 1.87792 )
+waves_sorting = [ NodePath("../Moryak") ]
 
 [node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
 position = Vector2( -18, 323 )
@@ -82,4 +72,5 @@ text = "Hooray"
 align = 1
 valign = 1
 
-[editable path="River"]
+[node name="Moryak" parent="." instance=ExtResource( 2 )]
+position = Vector2( -350.998, 167 )
