@@ -1,0 +1,208 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://level/bottom_enviroment/green_algae1.png" type="Texture" id=1]
+[ext_resource path="res://level/bottom_enviroment/AlgaeWobblabale.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bone2D/Bone2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 178.162, 55.7534 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bone2D/Bone2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6.5358 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bone2D/Bone2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -157.153, -9.52441 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bone2D/Bone2D2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -105.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bone2D/Bone2D3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 98.4189, -88.1008 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Bone2D/Bone2D3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -44.9999 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Wobble"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bone2D/Bone2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 5.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 175.489, 60.2079 ), Vector2( 178.162, 55.7534 ), Vector2( 175.489, 60.2079 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bone2D/Bone2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 6.5358, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bone2D/Bone2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4.2, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -157.153, -9.52441 ), Vector2( -167.844, -17.5425 ), Vector2( -157.153, -9.52441 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bone2D/Bone2D2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4.2, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -105.0, -96.1735, -105.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bone2D/Bone2D3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98.4189, -88.1008 ), Vector2( 82.3828, -103.246 ), Vector2( 98.4189, -88.1008 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Bone2D/Bone2D3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -44.9999, -53.8921, -44.9999 ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 169.073
+
+[node name="AlgaeWobblabale" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -752.807, -631.185 )
+texture = ExtResource( 1 )
+skeleton = NodePath("Skeleton2D")
+polygon = PoolVector2Array( 825.714, 715.714, 844.286, 685.714, 882.857, 672.857, 912.857, 682.857, 935.714, 661.429, 961.429, 664.286, 1027.14, 634.286, 1074.29, 635.714, 1128.57, 670, 1141.43, 705.714, 1141.43, 738.571, 1121.43, 755.714, 1152.86, 772.857, 1180, 824.286, 1162.86, 868.571, 1127.14, 895.714, 1070, 881.429, 1028.57, 888.571, 1008.57, 927.143, 965.714, 954.286, 885.714, 945.714, 865.714, 891.429, 870, 867.143, 838.571, 860, 768.571, 812.857, 754.286, 757.143, 770, 720 )
+uv = PoolVector2Array( 825.714, 715.714, 844.286, 685.714, 882.857, 672.857, 912.857, 682.857, 935.714, 661.429, 961.429, 664.286, 1027.14, 634.286, 1074.29, 635.714, 1128.57, 670, 1141.43, 705.714, 1141.43, 738.571, 1121.43, 755.714, 1152.86, 772.857, 1180, 824.286, 1162.86, 868.571, 1127.14, 895.714, 1070, 881.429, 1028.57, 888.571, 1008.57, 927.143, 965.714, 954.286, 885.714, 945.714, 865.714, 891.429, 870, 867.143, 838.571, 860, 768.571, 812.857, 754.286, 757.143, 770, 720 )
+polygons = [ PoolIntArray( 5, 4, 3, 2, 1, 0, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6 ) ]
+bones = [ "Bone2D", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "Bone2D/Bone2D", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "Bone2D/Bone2D2", PoolRealArray( 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5 ), "Bone2D/Bone2D3", PoolRealArray( 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Polygon2D"]
+visible = false
+position = Vector2( 965.636, 782.498 )
+
+[node name="Bone2D" type="Bone2D" parent="Polygon2D/Skeleton2D"]
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Bone2D" type="Bone2D" parent="Polygon2D/Skeleton2D/Bone2D"]
+position = Vector2( 178.162, 55.7534 )
+rotation = 0.114071
+rest = Transform2D( 1, 0, 0, 1, 167.471, 53.9716 )
+
+[node name="Bone2D2" type="Bone2D" parent="Polygon2D/Skeleton2D/Bone2D"]
+position = Vector2( -157.153, -9.52441 )
+rotation = -1.83259
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.258814, -0.965927, 0.965927, -0.258814, -157.153, -9.52441 )
+
+[node name="Bone2D3" type="Bone2D" parent="Polygon2D/Skeleton2D/Bone2D"]
+position = Vector2( 98.4189, -88.1008 )
+rotation = -0.785397
+rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 98.4189, -88.1008 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Polygon2D/Skeleton2D"]
+playback_speed = 5.0
+anims/RESET = SubResource( 1 )
+anims/Wobble = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 211.906, 161.452 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="." method="wobble"]
