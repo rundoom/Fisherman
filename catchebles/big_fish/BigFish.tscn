@@ -109,8 +109,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 33.0
-height = 118.0
+radius = 51.0
+height = 182.0
 
 [sub_resource type="Curve" id=35]
 min_value = -360.0
@@ -173,7 +173,7 @@ frames = SubResource( 2 )
 animation = "calm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BigFish"]
-position = Vector2( 0, -50 )
+position = Vector2( -44, -29 )
 shape = SubResource( 5 )
 disabled = true
 
