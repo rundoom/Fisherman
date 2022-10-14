@@ -26,14 +26,14 @@ glow_blend_mode = 0
 position = Vector2( 2, 1 )
 
 [node name="BigFish" parent="." instance=ExtResource( 7 )]
-position = Vector2( 356, 934 )
+position = Vector2( 324, 1284 )
 
 [node name="River" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 34 )
 waves_sorting = [ NodePath("../Moryak") ]
 
 [node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
-position = Vector2( -18, 323 )
+position = Vector2( -18, 312 )
 scale = Vector2( 1.02305, -0.333235 )
 zoom = Vector2( 1.6, 1.6 )
 
