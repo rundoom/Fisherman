@@ -29,10 +29,4 @@ func pass_away():
 
 
 func create_particle_texture():
-#	var frame_res = $ImageContainer/FishLittle.texture
-#
-#	var itex = ImageTexture.new()
-#	itex.create_from_image(frame_res, Texture.FLAGS_DEFAULT & ~Texture.FLAG_FILTER)
-	
-	$RemainsParticles.texture = $ImageContainer/FishLittle.texture
 	$RemainsParticles.emit_then_free()
