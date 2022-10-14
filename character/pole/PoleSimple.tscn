@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://character/pole/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png" type="Texture" id=1]
+[ext_resource path="res://character/pole/hook.png" type="Texture" id=1]
 [ext_resource path="res://character/pole/PoleHook.gd" type="Script" id=2]
 [ext_resource path="res://character/pole/DynamicLine.gd" type="Script" id=3]
 [ext_resource path="res://character/pole/fishing_pole.png" type="Texture" id=4]
@@ -47,39 +47,40 @@ contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HookPosition/PoleHook"]
-position = Vector2( -55, 19 )
+position = Vector2( -29, 13 )
 rotation = -1.4333
 shape = SubResource( 3 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="HookPosition/PoleHook"]
-position = Vector2( -63, 5 )
+position = Vector2( -29, 13 )
 update_scale = false
 
 [node name="Node2D" type="Node2D" parent="HookPosition/PoleHook"]
-position = Vector2( -0.0126495, -0.161011 )
+position = Vector2( 8, -5 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="HookPosition/PoleHook/Node2D"]
-position = Vector2( 0.317871, -0.814819 )
+position = Vector2( -17.4999, 9.99996 )
 rotation = 1.94003
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 centered = false
-offset = Vector2( -320.339, -73.036 )
+offset = Vector2( -817.042, -197.275 )
 flip_h = true
 region_enabled = true
-region_rect = Rect2( 200, 0, 600, 850 )
+region_rect = Rect2( 1205.13, 174.244, 1002.62, 1680.8 )
 
 [node name="Sprite2" type="Sprite" parent="HookPosition/PoleHook/Node2D"]
-position = Vector2( -77.3347, 41.7001 )
+position = Vector2( -75.5627, 39.4542 )
 rotation = 1.94003
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
 texture = ExtResource( 1 )
 centered = false
-offset = Vector2( -398.341, -194.773 )
+offset = Vector2( -371, -186.353 )
 flip_h = true
 region_enabled = true
-region_rect = Rect2( -50, 450, 250, 400 )
+region_rect = Rect2( 530.058, 620.864, 742.977, 1161 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -111, 45 )

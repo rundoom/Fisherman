@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png-8cb0dcbc26cfa20f1eddf249b10d86e2.stex"
+path="res://.import/hook.png-a42549417c3f2b85d5d0a36fdbe07eee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/pole/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png"
-dest_files=[ "res://.import/png-transparent-rusted-hook-donation-user-fish-hook-donation-fish-hook-fishing.png-8cb0dcbc26cfa20f1eddf249b10d86e2.stex" ]
+source_file="res://character/pole/hook.png"
+dest_files=[ "res://.import/hook.png-a42549417c3f2b85d5d0a36fdbe07eee.stex" ]
 
 [params]
 
