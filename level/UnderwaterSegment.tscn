@@ -18,7 +18,8 @@ script = ExtResource( 3 )
 [node name="Underwater" type="Sprite" parent="."]
 scale = Vector2( 1.01, 1 )
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 7680, 1080 )
+region_enabled = true
+region_rect = Rect2( 0, 3.192, 2200, 1076.81 )
 
 [node name="StonesLayer" type="Sprite" parent="."]
 position = Vector2( -5.93878, -1.78894 )
@@ -40,7 +41,6 @@ internal_vertex_count = 49
 
 [node name="Skeleton2D" type="Skeleton2D" parent="AlgaeWobblabale2/Polygon2D"]
 position = Vector2( 965.636, 782.498 )
-scale = Vector2( 1, 1 )
 
 [node name="Bone2D" type="Bone2D" parent="AlgaeWobblabale2/Polygon2D/Skeleton2D"]
 position = Vector2( -402.681, -108.524 )
@@ -54,13 +54,11 @@ rest = Transform2D( 0.993501, 0.113824, -0.113824, 0.993501, 374.074, -323.35 )
 [node name="Bone2D2" type="Bone2D" parent="AlgaeWobblabale2/Polygon2D/Skeleton2D/Bone2D"]
 position = Vector2( -47.7473, 275.439 )
 rotation = -1.83259
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.258814, -0.965927, 0.965927, -0.258814, -47.7473, 275.439 )
 
 [node name="Bone2D3" type="Bone2D" parent="AlgaeWobblabale2/Polygon2D/Skeleton2D/Bone2D"]
 position = Vector2( 159.483, -449.394 )
 rotation = -0.785396
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.707108, -0.707106, 0.707106, 0.707108, 159.483, -449.394 )
 
 [node name="Bone2D2" type="Bone2D" parent="AlgaeWobblabale2/Polygon2D/Skeleton2D"]
@@ -86,11 +84,9 @@ rest = Transform2D( 1, 0, 0, 1, 211.333, -573.962 )
 
 [node name="PhysicsHolder" type="Node2D" parent="AlgaeWobblabale2/Polygon2D"]
 position = Vector2( 965.636, 782.498 )
-scale = Vector2( 1, 1 )
 
 [node name="AlgaeMover" type="RigidBody2D" parent="AlgaeWobblabale2/Polygon2D/PhysicsHolder"]
 position = Vector2( -469.565, -519.941 )
-scale = Vector2( 1, 1 )
 collision_layer = 0
 collision_mask = 3
 mode = 2
@@ -110,12 +106,10 @@ autostart = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="AlgaeWobblabale2/Polygon2D/PhysicsHolder"]
 position = Vector2( -469.565, -519.941 )
-scale = Vector2( 1, 1 )
 collision_layer = 0
 collision_mask = 0
 
 [node name="PinJoint2D" type="DampedSpringJoint2D" parent="AlgaeWobblabale2/Polygon2D/PhysicsHolder/StaticBody2D"]
-scale = Vector2( 1, 1 )
 node_a = NodePath("..")
 node_b = NodePath("../../AlgaeMover")
 bias = 0.9

@@ -335,6 +335,7 @@ scale = Vector2( 0.532505, 0.532505 )
 
 [node name="WawesUpper" type="Sprite" parent="Surface/Waves"]
 position = Vector2( 1783.48, -73.5364 )
+rotation = -0.00174533
 texture = ExtResource( 7 )
 offset = Vector2( -22.0944, 307.261 )
 region_enabled = true
@@ -345,13 +346,14 @@ position = Vector2( 1711.22, 369.225 )
 rotation = -0.0453786
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 321, 7680, 759 )
+region_rect = Rect2( 3916.8, 321, 7680, 759 )
 
 [node name="WawesBottom" type="Sprite" parent="Surface/Waves"]
 position = Vector2( 1706.21, 527.997 )
+rotation = 0.00477388
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 712, 7680, 368 )
+region_rect = Rect2( 5875.2, 712, 7680, 368 )
 
 [node name="Underwater" type="Area2D" parent="." groups=["bubble_place"]]
 collision_layer = 8
