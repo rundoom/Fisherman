@@ -35,7 +35,7 @@ waves_sorting = [ NodePath("../Moryak") ]
 [node name="ShakingCamera" parent="." instance=ExtResource( 6 )]
 position = Vector2( -18, 323 )
 scale = Vector2( 1.02305, -0.333235 )
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1.6, 1.6 )
 
 [node name="SpawnerFish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 984, 253 )
@@ -43,7 +43,7 @@ curve = SubResource( 1 )
 fish_types = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ]
 
 [node name="SpawnerSeagull" parent="." instance=ExtResource( 4 )]
-position = Vector2( 999, -44 )
+position = Vector2( 881, -66 )
 fish_types = [ ExtResource( 5 ) ]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

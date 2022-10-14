@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "AlgaeWobblable",
+"language": "GDScript",
+"path": "res://level/bottom_enviroment/AlgaeWobblabale.gd"
+}, {
+"base": "Node2D",
 "class": "BigFish",
 "language": "GDScript",
 "path": "res://catchebles/big_fish/BigFish.gd"
@@ -50,6 +55,7 @@ _global_script_classes=[ {
 "path": "res://level/ShakingCamera.gd"
 } ]
 _global_script_class_icons={
+"AlgaeWobblable": "",
 "BigFish": "",
 "Fish": "",
 "GitAPI": "",
@@ -63,13 +69,13 @@ _global_script_class_icons={
 [application]
 
 config/name="VietnamiseFisherman"
-run/main_scene="res://test/TestingPlace.tscn"
+run/main_scene="res://level/Level.tscn"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor]
@@ -87,6 +93,7 @@ common/drop_mouse_on_gui_input_disabled=true
 2d_physics/layer_2="hook"
 2d_physics/layer_3="bound_destroyer"
 2d_physics/layer_4="bubbles"
+2d_physics/layer_5="underwater_env"
 
 [rendering]
 

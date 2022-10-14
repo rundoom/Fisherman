@@ -1,5 +1,9 @@
 extends Node2D
+class_name AlgaeWobblable
 
 
-func wobble(_body: Node):
-	$Polygon2D/Skeleton2D/AnimationPlayer.play("Wobble")
+signal reset
+
+
+func reset_movers():
+	emit_signal("reset")

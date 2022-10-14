@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://level/wawes_bottom.png" type="Texture" id=1]
-[ext_resource path="res://level/bottom_krasivy.png" type="Texture" id=2]
+[ext_resource path="res://level/UnderwaterSegment.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level/Bottom.gd" type="Script" id=3]
 [ext_resource path="res://level/background_krasivy.PNG" type="Texture" id=4]
 [ext_resource path="res://level/Underwater.gd" type="Script" id=5]
 [ext_resource path="res://level/wawes_middle.png" type="Texture" id=6]
 [ext_resource path="res://level/wawes_upper.png" type="Texture" id=7]
+[ext_resource path="res://level/River.gd" type="Script" id=9]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
@@ -37,6 +38,130 @@ shader_param/noize = SubResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1584.36, 349.85 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "MoveSegments"
+length = 40.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Segment1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 10.1 ),
+"transitions": PoolRealArray( 1, 1e-05, 1 ),
+"update": 0,
+"values": [ Vector2( -1200, 788.189 ), Vector2( -2654.2, 788.189 ), Vector2( 3162.6, 788.189 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Segment2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 20, 20.1 ),
+"transitions": PoolRealArray( 1, 1e-05, 1 ),
+"update": 0,
+"values": [ Vector2( 254.2, 788.189 ), Vector2( -2654.2, 788.189 ), Vector2( 3162.6, 788.189 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Segment3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 30, 30.1 ),
+"transitions": PoolRealArray( 1, 1e-05, 1 ),
+"update": 0,
+"values": [ Vector2( 1708.4, 788.189 ), Vector2( -2654.2, 788.189 ), Vector2( 3162.6, 788.189 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Segment4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 40, 40.2 ),
+"transitions": PoolRealArray( 1, 1e-05, 1 ),
+"update": 0,
+"values": [ Vector2( 3162.6, 788.189 ), Vector2( -2654.2, 788.189 ), Vector2( 3162.6, 788.189 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Segment1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 10.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_movers"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Segment2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 20.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_movers"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Segment3")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 30.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_movers"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Segment4")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 40.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_movers"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Segment1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1293.48, 788.197 ) ]
+}
 
 [sub_resource type="LineShape2D" id=8]
 
@@ -102,7 +227,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Surface/Waves/WawesUpper:region_rect")
 tracks/1/interp = 1
-tracks/1/loop_wrap = false
+tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
@@ -174,12 +299,14 @@ tracks/6/keys = {
 
 [node name="River" type="Node2D"]
 z_index = -2
+script = ExtResource( 9 )
 
 [node name="DistortionHolder" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
 
 [node name="DistortionProvider" type="ColorRect" parent="DistortionHolder"]
+visible = false
 material = SubResource( 3 )
 margin_left = -1573.0
 margin_top = 215.0
@@ -207,9 +334,9 @@ position = Vector2( -950.375, 49.1313 )
 scale = Vector2( 0.532505, 0.532505 )
 
 [node name="WawesUpper" type="Sprite" parent="Surface/Waves"]
-position = Vector2( 1761.39, 233.725 )
-rotation = -0.0262493
+position = Vector2( 1783.48, -73.5364 )
 texture = ExtResource( 7 )
+offset = Vector2( -22.0944, 307.261 )
 region_enabled = true
 region_rect = Rect2( 0, 62, 7680, 1018 )
 
@@ -218,32 +345,45 @@ position = Vector2( 1711.22, 369.225 )
 rotation = -0.0453786
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 5626.57, 321, 7680, 759 )
+region_rect = Rect2( 0, 321, 7680, 759 )
 
 [node name="WawesBottom" type="Sprite" parent="Surface/Waves"]
 position = Vector2( 1706.21, 527.997 )
-rotation = 0.0259253
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 8439.86, 712, 7680, 368 )
+region_rect = Rect2( 0, 712, 7680, 368 )
 
 [node name="Underwater" type="Area2D" parent="." groups=["bubble_place"]]
-collision_layer = 24
-collision_mask = 24
+collision_layer = 8
+collision_mask = 8
 space_override = 3
 linear_damp = 0.5
 script = ExtResource( 5 )
 
-[node name="Underwater" type="Sprite" parent="Underwater"]
-position = Vector2( -4.40892, 776.819 )
-scale = Vector2( 0.661388, 0.702445 )
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 4911, 1080 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Underwater"]
 position = Vector2( 4.64349, 779.15 )
 shape = SubResource( 10 )
+
+[node name="SegmentHolder" type="Node2D" parent="Underwater"]
+position = Vector2( -38.1407, -42.3784 )
+
+[node name="Segment1" parent="Underwater/SegmentHolder" instance=ExtResource( 2 )]
+position = Vector2( -1293.48, 788.197 )
+
+[node name="Segment2" parent="Underwater/SegmentHolder" instance=ExtResource( 2 )]
+position = Vector2( 254.2, 788.189 )
+
+[node name="Segment3" parent="Underwater/SegmentHolder" instance=ExtResource( 2 )]
+position = Vector2( 1708.4, 788.189 )
+
+[node name="Segment4" parent="Underwater/SegmentHolder" instance=ExtResource( 2 )]
+position = Vector2( 3162.6, 788.189 )
+
+[node name="SegmentAnimation" type="AnimationPlayer" parent="Underwater/SegmentHolder"]
+autoplay = "MoveSegments"
+playback_speed = 2.0
+anims/MoveSegments = SubResource( 13 )
+anims/RESET = SubResource( 14 )
 
 [node name="Borders" type="Area2D" parent="."]
 position = Vector2( -18, 798 )
@@ -263,6 +403,7 @@ shape = SubResource( 2 )
 autoplay = "RiverAnime"
 anims/RESET = SubResource( 11 )
 anims/RiverAnime = SubResource( 12 )
+blend_times = [ "RiverAnime", "RiverAnime", 0.004 ]
 
 [connection signal="body_exited" from="Underwater" to="Underwater" method="_on_Underwater_body_exited"]
 [connection signal="body_entered" from="Borders" to="Borders" method="_on_Bottom_body_entered"]
